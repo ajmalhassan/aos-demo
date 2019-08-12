@@ -6,25 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AOS Animation</title>
     <style>
-        .image-container {
-            background: url('https://via.placeholder.com/640x320');
-            height: 320px;
-            width: 640px;
-            margin: 40px auto;
-
-        }
+      .image-container {
+        background: url("https://via.placeholder.com/640x320");
+        height: 320px;
+        width: 640px;
+        margin: 40px auto;
+      }
+      .image-container:nth-child(odd) {
+        float: left;
+      }
+      .image-container:nth-child(even) {
+        float: right;
+      }
+      #positionedImage {
+          position: fixed;
+          top: 20px;
+          left: 30%;
+          border: 2px dotted salmon;
+      }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
-      <div class="image-container"></div>
+    <div id="positionedImage" class="image-container" data-aos="fade-left" data-aos-anchor="#lastImg"></div>
+    <div class="image-container" data-aos="fade-left"></div>
+    <div class="image-container" data-aos="fade-right"></div>
+    <div class="image-container" data-aos="fade-left"></div>
+    <div class="image-container" data-aos="fade-right"></div>
+    <div class="image-container" data-aos="fade-left"></div>
+    <div class="image-container" data-aos="fade-right"></div>
+    <div class="image-container" data-aos="fade-left"></div>
+    <!-- Last element below -->
+    <div id="lastImg" class="image-container" data-aos="fade-right"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
